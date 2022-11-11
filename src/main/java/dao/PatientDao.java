@@ -13,6 +13,7 @@ public class PatientDao {
 
 	public PatientDao() {
 		super();
+		System.out.println("OK constructor");
 		this.factory = ConnectServer.getInstance().getSessionFactory();
 	}
 	
@@ -24,7 +25,6 @@ public class PatientDao {
 			transaction.begin();
 			session.save(patient);
 			transaction.commit();
-			
 			return true;
 		} catch (Exception e) {
 			// TODO: handle exception
